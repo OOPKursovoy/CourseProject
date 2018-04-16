@@ -1,0 +1,69 @@
+﻿<Window x:Class="Nabu.UserProfile"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Nabu"
+        mc:Ignorable="d"
+        Title="UserProfile" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <Menu Background="#2f5c33" Foreground="AntiqueWhite" VerticalAlignment="Top" Height="60" Width="800">
+                <local:Profile  Margin="0,7,0,0"/>
+                <TextBlock Text="login" FontSize="20" Margin="280,0,0,0" />
+                <Button Grid.Column="2" Width="45" Height="45" Margin="200,0,0,0">
+                    <Button.Template>
+                        <ControlTemplate>
+                            <Border CornerRadius="50" Background="#dedddb">
+                                <materialDesign:PackIcon Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" Kind="Settings" Width="40" Height="40" Foreground="#f0eff1"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <local:Undo Margin="0,0,0,0"/>
+            </Menu>
+            <Grid Background="#9ead9b" Height="390">
+                <StackPanel>
+                    <StackPanel>
+                    <TextBlock Foreground="AntiqueWhite" FontSize="20" Margin="25">Date</TextBlock>                    
+                    <WrapPanel>
+                        <Button Width="45" Height="45" Margin="25,0,0,0">
+                            <Button.Template>
+                                <ControlTemplate>
+                                    <Border CornerRadius="50" Background="#dedddb">
+                                        <Image Source="ico\compose.ico" Width="50" Height="50" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>                        
+                    </WrapPanel>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock Foreground="AntiqueWhite" FontSize="20" Margin="25">Date</TextBlock>
+                        <WrapPanel>
+                            <Button Width="45" Height="45" Margin="25,0,0,0">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Border CornerRadius="50" Background="#dedddb">
+                                            <Image Source="ico\compose.ico" Width="50" Height="50" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button Width="45" Height="45" Margin="25,0,0,0">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Border CornerRadius="50" Background="#dedddb">
+                                            <Image Source="ico\compose.ico" Width="50" Height="50" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </WrapPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
