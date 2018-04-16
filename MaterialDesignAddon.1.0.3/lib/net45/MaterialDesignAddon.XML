@@ -1,0 +1,375 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MaterialDesignAddon</name>
+    </assembly>
+    <members>
+        <member name="T:MaterialDesignAddon.Controls.MaterialColorWheel">
+            <summary>
+                A color picker designed after Google's customizer.
+                The first click sets the primary color and the second click sets the accent color.
+                The credit for the design of this control goes to Google and the original can be found
+                at https://getmdl.io/customize/index.html. I took their SVG file and created a XAML control
+                based on that file.
+            </summary>
+            <seealso cref="T:System.Windows.Controls.Control" />
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.#cctor">
+            <summary>
+                Initializes static members of the <see cref="T:MaterialDesignAddon.Controls.MaterialColorWheel" /> class.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:MaterialDesignAddon.Controls.MaterialColorWheel" /> class.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.OnApplyTemplate">
+            <summary>
+                When overridden in a derived class, is invoked whenever application code or internal processes call
+                <see cref="M:System.Windows.FrameworkElement.ApplyTemplate" />.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.UnrestrictedColorCanvas_PreviewMouseLeftButtonUp(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+                Fired when a canvas that is not grey, blue grey, or brown is clicked. This changes
+                the primary or accent color depending on which selection is being processed.
+            </summary>
+            <param name="sender">The canvas.</param>
+            <param name="e">The event arguments</param>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.RestrictedColorCanvas_PreviewMouseLeftButtonUp(System.Object,System.Windows.Input.MouseButtonEventArgs)">
+            <summary>
+                Fired when a canvas that is grey, blue grey, or brown is clicked. This changes
+                the primary color only because these colors are not allowed to be selected as
+                accent colors.
+            </summary>
+            <param name="sender">The canvas.</param>
+            <param name="e">The event arguments</param>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.DisableInvalidColorChoices(System.String)">
+            <summary>
+                Keeps grey, brown, and blue grey from being selected as an accent color.
+            </summary>
+            <param name="color">The color.</param>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.GetColorCanvas(System.String)">
+            <summary>
+                Gets the canvas of the specified color.
+            </summary>
+            <param name="color">The color.</param>
+            <returns>Canvas.</returns>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.DisableCurrentColor(System.String)">
+            <summary>
+                Disables the currently selected primary color.
+            </summary>
+            <param name="color">The color.</param>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.DisableGrey">
+            <summary>
+                Keeps grey from being selected as an accent color.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.DisableBlueGrey">
+            <summary>
+                Keeps blue grey from being selected as an accent color.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.DisableBrown">
+            <summary>
+                Keeps brown from being selected as an accent color.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.EnableDisabledColorChoices">
+            <summary>
+                Enables blue grey, grey, and brown to be selected as a primary color.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.EnableAllColors">
+            <summary>
+                Enables all colors.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.DisableAllEffects">
+            <summary>
+                Disables all effects.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.EnableGrey">
+            <summary>
+                Enables grey to be selected.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.EnableBlueGrey">
+            <summary>
+                Enables blue grey to be selected.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.EnableBrown">
+            <summary>
+                Enables brown to be selected.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.ClearAllSelections">
+            <summary>
+                Sets the visibility to collapsed for all of the selectors and indicators.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.ClearSelectionIcons">
+            <summary>
+                Sets the visibility of all the selector <see cref="T:System.Windows.Shapes.Path" /> to collapsed.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.ClearTextIcons">
+            <summary>
+                Sets the visibility of all of the <see cref="T:System.Windows.Controls.TextBlock" /> that specify
+                whether the selection is primary or accent to collapsed.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.GetPolygons(System.String)">
+            <summary>
+                Returns the canvas that contains the polygons for the
+                selected color.
+            </summary>
+            <param name="color"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.ApplyDropShadowEffect(System.String)">
+            <summary>
+                Applies a drop shadow effect to the canvas that contains the polygons
+                for the selected color.
+            </summary>
+            <param name="color"></param>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.ToggleDarkLight">
+            <summary>
+                Toggles the theme between dark and light.
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Controls.MaterialColorWheel.ReplaceEntry(System.Object,System.Object,System.Windows.ResourceDictionary)">
+            <summary>
+                Replaces a certain entry anywhere in the parent dictionary and its merged dictionaries.
+                This was taken from the Material Design In XAML Toolkit. James gets the credit for this.
+            </summary>
+            <param name="entryName">The entry to replace</param>
+            <param name="newValue">The new entry value</param>
+            <param name="parentDictionary">The root dictionary to start searching at. Null means using Application.Current.Resources</param>
+        </member>
+        <member name="F:MaterialDesignAddon.Controls.MaterialColorWheel.SelectorColorProperty">
+            <summary>
+                The selector color property
+            </summary>
+        </member>
+        <member name="P:MaterialDesignAddon.Controls.MaterialColorWheel.SelectorColor">
+            <summary>
+                Gets or sets the color of the selector.
+            </summary>
+            <value>The color of the selector.</value>
+        </member>
+        <member name="F:MaterialDesignAddon.Controls.MaterialColorWheel.SelectorForegroundColorProperty">
+            <summary>
+                The selector foreground color property
+            </summary>
+        </member>
+        <member name="P:MaterialDesignAddon.Controls.MaterialColorWheel.SelectorForegroundColor">
+            <summary>
+                Gets or sets the color of the selector foreground.
+            </summary>
+            <value>The color of the selector foreground.</value>
+        </member>
+        <member name="F:MaterialDesignAddon.Controls.MaterialColorWheel.StretchProperty">
+            <summary>
+                The stretch property
+            </summary>
+        </member>
+        <member name="P:MaterialDesignAddon.Controls.MaterialColorWheel.Stretch">
+            <summary>
+                Gets or sets the stretch.
+            </summary>
+            <value>The stretch.</value>
+        </member>
+        <member name="F:MaterialDesignAddon.Controls.MaterialColorWheel.CenterButtonTextProperty">
+            <summary>
+                The center button text property
+            </summary>
+        </member>
+        <member name="P:MaterialDesignAddon.Controls.MaterialColorWheel.CenterButtonText">
+            <summary>
+                Gets or sets the center button text.
+            </summary>
+            <value>The center button text.</value>
+        </member>
+        <member name="F:MaterialDesignAddon.Controls.MaterialColorWheel.ButtonWidthProperty">
+            <summary>
+                The button width property
+            </summary>
+        </member>
+        <member name="P:MaterialDesignAddon.Controls.MaterialColorWheel.ButtonWidth">
+            <summary>
+                Gets or sets the width of the button.
+            </summary>
+            <value>The width of the button.</value>
+        </member>
+        <member name="F:MaterialDesignAddon.Controls.MaterialColorWheel.ButtonHeightProperty">
+            <summary>
+                The button height property
+            </summary>
+        </member>
+        <member name="P:MaterialDesignAddon.Controls.MaterialColorWheel.ButtonHeight">
+            <summary>
+                Gets or sets the height of the button.
+            </summary>
+            <value>The height of the button.</value>
+        </member>
+        <member name="F:MaterialDesignAddon.Controls.MaterialColorWheel.CenterButtonFontColorProperty">
+            <summary>
+                The center button font color property
+            </summary>
+        </member>
+        <member name="P:MaterialDesignAddon.Controls.MaterialColorWheel.CenterButtonFontColor">
+            <summary>
+                Gets or sets the color of the center button font.
+            </summary>
+            <value>The color of the center button font.</value>
+        </member>
+        <member name="P:MaterialDesignAddon.Controls.MaterialColorWheel.PrimaryName">
+            <summary>
+                Gets or sets the name of the primary color.
+            </summary>
+            <value>The name of the primary color.</value>
+        </member>
+        <member name="P:MaterialDesignAddon.Controls.MaterialColorWheel.AccentName">
+            <summary>
+                Gets or sets the name of the accent color.
+            </summary>
+            <value>The name of the accent color.</value>
+        </member>
+        <member name="P:MaterialDesignAddon.Controls.MaterialColorWheel.IsDark">
+            <summary>
+                Gets or sets a value indicating whether this instance is dark.
+            </summary>
+            <value><c>true</c> if this instance is dark; otherwise, <c>false</c>.</value>
+        </member>
+        <member name="T:MaterialDesignAddon.Helpers.VisualTreeHelper">
+            <summary>
+            Helper methods for UI-related tasks.
+            I, Tim Stephansen, take no credit for this class whatsoever.
+            This class was obtained from Philip Sumi (a fellow WPF Disciples blog)
+            http://www.hardcodet.net/uploads/2009/06/UIHelper.cs
+            </summary>
+        </member>
+        <member name="M:MaterialDesignAddon.Helpers.VisualTreeHelper.TryFindParent``1(System.Windows.DependencyObject)">
+            <summary>
+            Finds a parent of a given item on the visual tree.
+            </summary>
+            <typeparam name="T">The type of the queried item.</typeparam>
+            <param name="child">A direct or indirect child of the
+            queried item.</param>
+            <returns>The first parent item that matches the submitted
+            type parameter. If not matching item can be found, a null
+            reference is being returned.</returns>
+        </member>
+        <member name="M:MaterialDesignAddon.Helpers.VisualTreeHelper.FindChild``1(System.Windows.DependencyObject,System.String)">
+            <summary>
+            Finds a Child of a given item in the visual tree. 
+            </summary>
+            <param name="parent">A direct parent of the queried item.</param>
+            <typeparam name="T">The type of the queried item.</typeparam>
+            <param name="childName">x:Name or Name of child. </param>
+            <returns>The first parent item that matches the submitted type parameter. 
+            If not matching item can be found, 
+            a null parent is being returned.</returns>
+        </member>
+        <member name="M:MaterialDesignAddon.Helpers.VisualTreeHelper.GetParentObject(System.Windows.DependencyObject)">
+            <summary>
+            This method is an alternative to WPF's
+            <see cref="!:VisualTreeHelper.GetParent"/> method, which also
+            supports content elements. Keep in mind that for content element,
+            this method falls back to the logical tree of the element!
+            </summary>
+            <param name="child">The item to be processed.</param>
+            <returns>The submitted item's parent, if available. Otherwise
+            null.</returns>
+        </member>
+        <member name="M:MaterialDesignAddon.Helpers.VisualTreeHelper.FindChildren``1(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            Analyzes both visual and logical tree in order to find all elements of a given
+            type that are descendants of the <paramref name="source"/> item.
+            </summary>
+            <typeparam name="T">The type of the queried items.</typeparam>
+            <param name="source">The root element that marks the source of the search. If the
+            source is already of the requested type, it will not be included in the result.</param>
+            <param name="forceUsingTheVisualTreeHelper">Sometimes it's better to search in the VisualTree (e.g. in tests)</param>
+            <returns>All descendants of <paramref name="source"/> that match the requested type.</returns>
+        </member>
+        <member name="M:MaterialDesignAddon.Helpers.VisualTreeHelper.GetChildObjects(System.Windows.DependencyObject,System.Boolean)">
+            <summary>
+            This method is an alternative to WPF's
+            <see cref="!:VisualTreeHelper.GetChild"/> method, which also
+            supports content elements. Keep in mind that for content elements,
+            this method falls back to the logical tree of the element.
+            </summary>
+            <param name="parent">The item to be processed.</param>
+            <param name="forceUsingTheVisualTreeHelper">Sometimes it's better to search in the VisualTree (e.g. in tests)</param>
+            <returns>The submitted item's child elements, if available.</returns>
+        </member>
+        <member name="M:MaterialDesignAddon.Helpers.VisualTreeHelper.TryFindFromPoint``1(System.Windows.UIElement,System.Windows.Point)">
+            <summary>
+            Tries to locate a given item within the visual tree,
+            starting with the dependency object at a given position. 
+            </summary>
+            <typeparam name="T">The type of the element to be found
+            on the visual tree of the element at the given location.</typeparam>
+            <param name="reference">The main element which is used to perform
+            hit testing.</param>
+            <param name="point">The position to be evaluated on the origin.</param>
+        </member>
+        <member name="T:MaterialDesignAddon.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MaterialDesignAddon.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MaterialDesignAddon.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>
